@@ -1,13 +1,3 @@
-// Function marks todo as completed
-
-const completeItem = () => {
-  if (checkbox.checked) {
-    newTodo.classList.add("completed");
-  } else {
-    newTodo.classList.remove("completed");
-  }
-};
-
 // Function to validate input
 const validate = (todo) => {
   if (todo == "") {
@@ -31,7 +21,15 @@ const createNewTodo = (newTodoItem) => {
   // Create Checkbox
   const checkbox = document.createElement("input");
   checkbox.type = "checkbox";
-  checkbox.addEventListener("change", completeItem);
+
+  // Function marks todo as completed
+  checkbox.addEventListener("change", function () {
+    if (checkbox.checked) {
+      newTodo.classList.add("completed");
+    } else {
+      newTodo.classList.remove("completed");
+    }
+  });
 
   // Create Delete Button
 
